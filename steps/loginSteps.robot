@@ -12,7 +12,7 @@ Quando faço login com o usuario '${usuario}' e senha '${senha}'
     LoginPA.Fazer login    ${usuario}    ${senha}
 
 Então vejo meu usuario '${nome}' logado na pagina principal
-    Wait Until Page Contains          Robot_FW                                        # Aguardar enquanto não exibir "Testes" na pagina
-    Page Should Contain               Robot_FW                                        # A pagina deve conter "Testes"
-    #Tirar um print da tela
+    Wait Until Page Contains          Robot_FW       # Aguardar enquanto não exibir "Testes" na pagina
+    Page Should Contain               Robot_FW       # A pagina deve conter "Testes"
+    #base.Tirar print da tela
 

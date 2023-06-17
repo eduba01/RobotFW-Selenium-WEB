@@ -1,13 +1,13 @@
 *** Keywords ***
-
 Dado ${keyword}
-    Run Keyword    ${keyword}
+    Run keyword   ${keyword}
 
 Quando ${keyword}
-    Run Keyword    ${keyword}
+    Run keyword   ${keyword}
 
-Entao ${keyword}
-    Run Keyword    ${keyword}
+Então ${keyword}
+    Run keyword   ${keyword}
 
 E ${keyword}
-    Run Keyword    ${keyword}
+    Run keyword   ${keyword}
+

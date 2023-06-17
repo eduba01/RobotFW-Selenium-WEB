@@ -1,18 +1,16 @@
 *** Settings ***
 Library     SeleniumLibrary
-Library     OperatingSystem
-Resource    ../resources/base.robot
+Resource    ../resources/base.robot    
 Resource    ../pages/HomeInvestPA.robot
+Resource    ../pages/LoginPA.robot
 
 *** Keywords ***
-Fazer a busca por pela ação "${acao}"
-    Click Element             //i[contains(.,'search')]
-    Input Text                //input[contains(@class,'Typeahead-input input tt-input')]    ${acao}
-    Click Element             //span[@title='Nome da empresa/FII']
-    Verificar se exibe a palavra "${acao}" na pagina
+Quando faço uma busca pela ação '${acao}' 
+  HomeInvestPA.Fazer a busca por pela ação '${acao}'  # Fazer a busca por pela ação "${acao}"
 
-Validar a cotação atual da ação
-    ${cotacao}=    Get Text    (//strong[contains(@class,'value')])[1]
-    Log    ------------ COTACAO DA ACAO ${cotacao}
+Então vejo a palavra '${nomeAcao}' na pagina
+    HomeInvestPA.Verificar se exibe a palavra '${nomeAcao}' na pagina
 
-   # ${cotacao} >= "40,00"
+#HomeInvestPA.Validar a cotação atual da ação  
+Então vejo a cotação do ativo
+    Validar a cotação atual da ação

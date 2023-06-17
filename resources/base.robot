@@ -1,34 +1,28 @@
 *** Settings ***
-Library    SeleniumLibrary
-Resource    ../features/login.robot
-Resource    ../features/HomeInvest.robot
-
-*** Variables ***
-${BASE_URL}         https://statusinvest.com.br/
-${BROWSER}          chrome
-${locator}          //img[@src='/img/logo/logo-main.png?v=22']
-
+Library     SeleniumLibrary
+Resource     ../global_variables.robot
+ 
 *** Keywords ***
 Abrir o navegador  
-    Open Browser                    about:blank      ${BROWSER}
+  
+    Open Browser                    about:blank      ${BROWSER}    
+    ...                             options=add_experimental_option("detach", True) 
     Set Selenium Implicit Wait      5
     Set Window Size                 1356    725
+    #Maximize Browser Window
 
 Fechar o navegador
-    Tirar um print da tela
-    #Close Browser
-
+    #Tirar print da tela
+    Close Browser
 
 Abrir a url
     Go To    url=${BASE_URL}
-    Wait Until Element Is Visible    locator=${locator}
+    Wait Until Element Is Visible    //img[@src='/img/logo/logo-main.png?v=22']
 
+Tirar print da tela
+    Capture Page Screenshot             # Tira um print da tela como evidência
 
-Tirar um print da tela
-    Capture Page Screenshot                                                         # Tira um print da tela como evidência
-    Sleep    1
-
-
+### BDD ###
 Dado que eu acesso a pagina statusinvest
     Abrir o navegador 
     Abrir a url

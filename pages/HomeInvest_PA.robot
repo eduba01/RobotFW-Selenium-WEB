@@ -28,9 +28,17 @@ Verificar se exibe a palavra '${nome_acao}' na pagina
     Sleep    1
     Page Should Contain               ${nome_acao}           # A pagina deve conter "Testes"
 
-Validar a cotação atual da ação
+Pegar a cotação do ativo
+    [Arguments]    ${cotacao}
     ${cotacao}=    Get Text    ${cotacao} 
     Log                       ------------ COTACAO DA ACAO ------------ ${cotacao}
+    [Return]    ${cotacao}
 
+Validar se a ação esta abaixo da media
+    ${cotacao}=     Pegar a cotação do ativo    ${cotacao}
+    ${mensagem}  Set Variable If    ${cotacao} > 30,00      Cotação esta abaixo da média da carteira ${cotacao}
+    #${cotacao} esta abaixo da média
+    Log                        ------------ ${mensagem}
+    [Return]    ${mensagem}
    # Verificar o valor da acão 
    # ${cotacao} >= "40,00"

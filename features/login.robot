@@ -4,9 +4,9 @@ Library    String
 Documentation    Suite de testes na pagina de login
             ...  -- Version     1.0.0.1           
             ...  -- Author      Eduardo Barbosa
-Resource         ../resources/base.robot
-Resource         ../steps/loginSteps.robot   
-#Suite Setup      Abrir o navegador
+Resource           ../resources/base.robot
+Resource           ../steps/login_kw.robot   
+#Suite Setup       Abrir o navegador
 #Test setup        Abrir o navegador  
 Suite Teardown     Fechar o navegador 
 Test Teardown      Fechar o navegador  

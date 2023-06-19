@@ -11,14 +11,13 @@
 
 ## 📁 Detalhes 
 
-A aplicação web a ser testada com a biblioteca SeleniumLibrary
+A aplicação web a ser testada com a biblioteca #SeleniumLibrary
  
 ````
-.  
-├── features                 # Files and folders of framework, test cases (root code).  
-├── pages                    # Action pages.  
-├── resources                # Json ou YAML files.  
-├── steps                    # Keywords of tests.  
+ ├── features                 # Files and folders of framework, test cases (root code).  
+ ├── pages                    # Action pages.  
+ ├── resources                # Json or YAML files.  
+ ├── steps                    # Keywords of tests.  
   ├── .gitignore                 # Files and Folders to ignore in repository.  
   ├── LICENSE  
   ├── README.md                  # Documentation of project.  

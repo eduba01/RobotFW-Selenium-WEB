@@ -28,11 +28,13 @@ A aplicação web a ser testada com a biblioteca #SeleniumLibrary
 ## 🛠️ Instalação e configurações
 
 ## Run tests
+````
 cd features
+
 robot -d  results login.robot 
 
 robot -d  results login.robot && robotmetrics --inputpath ./Results/ --output output.xml --log log.html --logo "https://static.carrefour.com.br/imagens/home-carrefour/img/logoCarrefourSite.svg"
-
+````
  
 ## Instalar  python
 WIN 

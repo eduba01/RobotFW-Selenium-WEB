@@ -9,25 +9,20 @@
 - VS Code: IDE utilizada para desenvolvimento dos testes;
 - Google Chrome: navegador web utilizado para execução dos testes.
 
-## 📁 Detalhes do projeto
+## 📁 Detalhes 
 
-A aplicação web a ser testada  
-
-A typical cucumber directory pattern (projeto segue o padrão ATDD - style gherkin).  
-steps_definitions --> actions   
-specifications   --> atest (the same in browser library framework)  
+A aplicação web a ser testada com a biblioteca SeleniumLibrary
+ 
 ````
 .  
-├── features                 # Files and folders of framework (root code).  
-  ├── support                # Commons files to tests spec (global use).  
-     ├── pages               # YML locators.  
-     ├── resources           # Json ou YAML files.  
-  ├── actions                # Keywords of tests.  
-  ├── atest                  # Specification of what the tests should do.  
-├── .gitignore              # Files and Folders to ignore in repository.  
-├── LICENSE  
-├── README.md               # Documentation of project.  
-└── requirements.txt        # Libraries to need to install.  
+├── features                 # Files and folders of framework, test cases (root code).  
+├── pages                    # Action pages.  
+├── resources                # Json ou YAML files.  
+├── steps                    # Keywords of tests.  
+  ├── .gitignore                 # Files and Folders to ignore in repository.  
+  ├── LICENSE  
+  ├── README.md                  # Documentation of project.  
+  └── requirements.txt           # Libraries to need to install.  
 ````
 
 

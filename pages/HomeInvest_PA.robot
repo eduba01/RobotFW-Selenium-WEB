@@ -9,8 +9,8 @@ ${btn_entrar}                   //span[contains(.,'ENTRAR')]
 ${lbl_busca}                    //i[contains(.,'search')]
 ${txt_acao}                     //input[contains(@class,'Typeahead-input input tt-input')]   
 ${txt_nome_acao}                //span[@title='Nome da empresa/FII']
-${cotacao}                      (//strong[contains(@class,'value')])[1]
-
+${txt_cotacao}                  (//strong[contains(@class,'value')])[1]
+${cot_carteira}                 30,00
 
 *** Keywords ***
 Clicar no botão para fazer login
@@ -28,17 +28,12 @@ Verificar se exibe a palavra '${nome_acao}' na pagina
     Sleep    1
     Page Should Contain               ${nome_acao}           # A pagina deve conter "Testes"
 
-Pegar a cotação do ativo
-    [Arguments]    ${cotacao}
-    ${cotacao}=    Get Text    ${cotacao} 
-    Log                       ------------ COTACAO DA ACAO ------------ ${cotacao}
-    [Return]    ${cotacao}
+Compara a cotacao
+    ${COTACAO}=    Get Text    ${txt_cotacao}     # Retorna o texto do elemento txt_cotacao
+    Log    ------------ ${COTACAO}
+    ${MENSAGEM}    Set Variable If    '${COTACAO}'>'${cot_carteira}'      Cotação ${COTACAO} esta ACIMA da média da carteira ${cot_carteira}    Cotação ${COTACAO} esta ABAIXO da média da carteira ${cot_carteira}    
+    [Return]    ${MENSAGEM}
 
 Validar se a ação esta abaixo da media
-    ${cotacao}=     Pegar a cotação do ativo    ${cotacao}
-    ${mensagem}  Set Variable If    ${cotacao} > 30,00      Cotação esta abaixo da média da carteira ${cotacao}
-    #${cotacao} esta abaixo da média
-    Log                        ------------ ${mensagem}
-    [Return]    ${mensagem}
-   # Verificar o valor da acão 
-   # ${cotacao} >= "40,00"
+    ${MENSAGEM}    Compara a cotacao    # Executa a keyword "Compara a cotacao" que retorna/atribui o valor na variavel ${MENSAGEM}
+    Log    ------------ ${MENSAGEM}

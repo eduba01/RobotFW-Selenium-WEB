@@ -25,17 +25,18 @@ Caso de Teste 01 - Buscar pela ação PETR4
 
 Caso de Teste 02 - Validar o valor da Ação
     [Documentation]    Esse teste verifica o valor de uma ação              
-    [Tags]             test     regressivo
+    [Tags]             valor     regressivo
     Dado que eu acesso a pagina statusinvest
     Quando faço login com o usuario 'spclash01@gmail.com' e senha 'Spclash01@'
     E faço uma busca pela ação 'PETR4'  
     Então vejo a cotação do ativo 'PETR4'  
      
-
-# Caso de Teste 02 - Verificar o dividend yeld
-#     [Documentation]    Esse teste faz uma busca por um
-#     ...                papel(ação)
-#     [Tags]             dividendos
-    
+Caso de Teste 03 - Validar se a cotação esta acima da media
+    [Documentation]    Esse teste verifica o valor de uma ação esta abaixo da média da carteira            
+    [Tags]             test     regressivo
+    Dado que eu acesso a pagina statusinvest
+    Quando faço login com o usuario 'spclash01@gmail.com' e senha 'Spclash01@'
+    E faço uma busca pela ação 'PETR4'  
+    Então vejo a cotação esta acima da media   
 
 

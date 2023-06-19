@@ -10,7 +10,7 @@ ${lbl_busca}                    //i[contains(.,'search')]
 ${txt_acao}                     //input[contains(@class,'Typeahead-input input tt-input')]   
 ${txt_nome_acao}                //span[@title='Nome da empresa/FII']
 ${txt_cotacao}                  (//strong[contains(@class,'value')])[1]
-${cot_carteira}                 30,00
+${cot_carteira}                 35,00
 
 *** Keywords ***
 Clicar no botão para fazer login
@@ -28,12 +28,12 @@ Verificar se exibe a palavra '${nome_acao}' na pagina
     Sleep    1
     Page Should Contain               ${nome_acao}           # A pagina deve conter "Testes"
 
-Compara a cotacao
+Retorna a cotacao do ativo
     ${COTACAO}=    Get Text    ${txt_cotacao}     # Retorna o texto do elemento txt_cotacao
     Log    ------------ ${COTACAO}
-    ${MENSAGEM}    Set Variable If    '${COTACAO}'>'${cot_carteira}'      Cotação ${COTACAO} esta ACIMA da média da carteira ${cot_carteira}    Cotação ${COTACAO} esta ABAIXO da média da carteira ${cot_carteira}    
-    [Return]    ${MENSAGEM}
+    [Return]    ${COTACAO}
 
-Validar se a ação esta abaixo da media
-    ${MENSAGEM}    Compara a cotacao    # Executa a keyword "Compara a cotacao" que retorna/atribui o valor na variavel ${MENSAGEM}
+Validar se a ação esta acima da media
+    ${COTACAO}    Retorna a cotacao do ativo    # Executa a keyword "Compara a cotacao" que retorna/atribui o valor na variavel ${MENSAGEM}
+    ${MENSAGEM}    Set Variable If    '${COTACAO}'>'${cot_carteira}'      Cotação ${COTACAO} esta ACIMA da média da carteira ${cot_carteira}    Cotação ${COTACAO} esta ABAIXO da média da carteira ${cot_carteira}    
     Log    ------------ ${MENSAGEM}

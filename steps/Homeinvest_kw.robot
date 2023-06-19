@@ -17,4 +17,7 @@ Então vejo a palavra '${nomeAcao}' na pagina
     HomeInvest_PA.Verificar se exibe a palavra '${nomeAcao}' na pagina
 
 Então vejo a cotação do ativo '${nomeAcao}'  
-    HomeInvest_PA.Validar se a ação esta abaixo da media
+    HomeInvest_PA.Retorna a cotacao do ativo
+
+Então vejo a cotação esta acima da media  
+    HomeInvest_PA.Validar se a ação esta acima da media 

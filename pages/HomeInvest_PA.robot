@@ -10,7 +10,7 @@ ${lbl_busca}                    //i[contains(.,'search')]
 ${txt_acao}                     //input[contains(@class,'Typeahead-input input tt-input')]   
 ${txt_nome_acao}                //span[@title='Nome da empresa/FII']
 ${txt_cotacao}                  (//strong[contains(@class,'value')])[1]
-${cot_carteira}                 35,00
+${cot_carteira}                 30,00
 
 *** Keywords ***
 Clicar no botão para fazer login

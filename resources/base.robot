@@ -4,7 +4,6 @@ Resource     ../global_variables.robot
  
 *** Keywords ***
 Abrir o navegador  
-  
     Open Browser                    about:blank      ${BROWSER}    
     ...                             options=add_experimental_option("detach", True) 
     Set Selenium Implicit Wait      5
@@ -24,5 +23,5 @@ Tirar print da tela
 
 ### BDD ###
 Dado que eu acesso a pagina statusinvest
-    Abrir o navegador 
+    #Abrir o navegador 
     Abrir a url
